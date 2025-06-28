@@ -1,0 +1,198 @@
+/* ...existing code di atas tetap... */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #cecdcd;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background: #35424a;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px 30px 30px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex: 1 0 auto;
+}
+form {
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+form label {
+    display: inline-block;
+    width: 60px;
+    margin-bottom: 8px;
+}
+form input[type="text"] {
+    width: 60%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form button {
+    background: #e8491d;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #c0392b;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin-bottom: 20px;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    text-align: left;
+}
+table th {
+    background: #35424a;
+    color: #fff;
+}
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+footer {
+    background: #35424a;
+    color: #fff;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 40px;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Modal Pop-up */
+.popup-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(30, 41, 59, 0.35);
+    justify-content: center;
+    align-items: center;
+}
+.popup-modal.active {
+    display: flex;
+}
+.popup-content {
+    background: linear-gradient(135deg, #fff 80%, #e8eaf6 100%);
+    padding: 36px 48px 28px 48px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(30,41,59,0.18);
+    text-align: center;
+    position: relative;
+    min-width: 280px;
+    max-width: 90vw;
+    animation: popupIn 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popupIn {
+    from { transform: scale(0.7) translateY(40px); opacity: 0; }
+    to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 26px;
+    color: #e8491d;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s, transform 0.2s;
+}
+.close-btn:hover {
+    color: #35424a;
+    transform: scale(1.2);
+}
+.popup-content p {
+    font-size: 1.18rem;
+    color: #35424a;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+.hapus-btn-group {
+    margin-top: 18px;
+}
+#hapus-ya, #hapus-tidak {
+    padding: 7px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+#hapus-ya {
+    background: #e8491d;
+    color: #fff;
+}
+#hapus-ya:hover {
+    background: #c0392b;
+}
+#hapus-tidak {
+    background: #ccc;
+    color: #222;
+}
+#hapus-tidak:hover {
+    background: #b0b0b0;
+    color: #111;
+}
+@media (max-width: 600px) {
+    .container {
+        width: 98%;
+        padding: 10px;
+    }
+    form label, form input[type="text"] {
+        width: 100%;
+        display: block;
+    }
+    form input[type="text"] {
+        margin-bottom: 15px;
+    }
+    .popup-content {
+        padding: 20px 10px 16px 10px;
+        min-width: 0;
+    }
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    text-align: center; /* Tambahkan ini agar semua kolom center */
+}
+table th {
+    text-align: center;
+}
